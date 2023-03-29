@@ -1,12 +1,13 @@
-function Title(props) {
-  return <h1>{props.name}</h1>
-}
-function Banner(props) {
-  return(
-    <div>
-      <Title name={props.title}/>
-    </div>
-  );
+import React, { Component } from 'react';
+
+class Banner extends Component {
+  render() {
+    return(
+      <div>
+        <h1>{this.props.title}</h1>
+      </div>
+    );
+  }
 }
 
 export default Banner;
