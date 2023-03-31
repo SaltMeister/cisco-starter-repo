@@ -22,7 +22,7 @@ class App extends Component {
             <IpCollector url="https://api64.ipify.org"/>
           </Exhibit> 
 
-          <Exhibit header="WebSocket">
+          <Exhibit header="Pylon Packet Latency">
             <WebSocket/>
           </Exhibit> 
         </div>
