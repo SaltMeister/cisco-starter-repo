@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
 
+const W3CWebSocket = require('websocket').w3cwebsocket;
+
 class WebSocket extends Component {
+  client = new W3CWebSocket("ws://localhost:55455");
+
   constructor(props){
     super(props);
+
+    this.packetTime = null;
+
     this.state = {
-      socket: null,
       latency: null,
     }
   }
 
   componentDidMount(){
-    if(this.state.socket === null){
-      this.setState({ socket: new WebSocket("ws://192.168.1.136:55455")});
+    this.client.onmessage = (e) => {
+      if (typeof e.data === 'string') {
+        this.packetTime = Math.abs(Date.now() - e.data);
+        this.setState({latency: this.packetTime}); 
+      }        
     }
-
   }
 
   render(){
     return(
       <span>
-        Latency == {this.state.latency}
+        {this.state.latency}ms
       </span>      
     );
   }
