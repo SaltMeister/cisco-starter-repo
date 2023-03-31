@@ -16,7 +16,6 @@ class IpCollector extends Component {
       .then((response) => response.text())
       .then((data) => {
         this.setState({ip: data});
-        console.log(data);
       });
   }
 

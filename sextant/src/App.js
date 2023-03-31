@@ -3,6 +3,7 @@ import './App.css';
 import Banner from './Components/Banner';
 import Exhibit from './Components/Exhibit';
 import IpCollector from './Components/IpCollector';
+import WebSocket from './Components/WebSocket';
 
 class App extends Component {
   render() {
@@ -15,7 +16,7 @@ class App extends Component {
         <div className="App-exhibit">
           <Exhibit header="IPV4" children={<IpCollector url="https://api.ipify.org"/>}/>
           <Exhibit header="IPV6" children={<IpCollector url="https://api64.ipify.org"/>}/>
-
+          <Exhibit header="WebSocket" children={<WebSocket/>}/>
           
         </div>
       {/* End of App */}
