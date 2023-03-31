@@ -13,8 +13,10 @@ class App extends Component {
         </header>
 
         <div className="App-exhibit">
-          <Exhibit header="IPV4" children={<IpCollector ipType="ipv4"/>}/>
-          <Exhibit header="IPV6" children={<IpCollector ipType="ipv6"/>}/>
+          <Exhibit header="IPV4" children={<IpCollector url="https://api.ipify.org"/>}/>
+          <Exhibit header="IPV6" children={<IpCollector url="https://api64.ipify.org"/>}/>
+
+          
         </div>
       {/* End of App */}
       </div>
